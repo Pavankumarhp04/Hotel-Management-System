@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grand Horizon | Management System</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <!-- Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+    <!-- Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+    <div id="login-overlay" class="overlay">
+        <div class="login-card">
+            <div class="brand">
+                <h1 class="brand-title" style="letter-spacing: -0.08em; font-style: normal;">GRAND<br>HORIZON</h1>
+                <p class="brand-sub">HOSPITALITY MANAGEMENT SYSTEM</p>
+            </div>
+            <form id="login-form">
+                <div class="form-group" style="margin-bottom: 1.5rem;">
+                    <label>Terminal ID</label>
+                    <input type="text" id="username" placeholder="admin_01" required value="admin">
+                </div>
+                <div class="form-group" style="margin-bottom: 2rem;">
+                    <label>Access Key</label>
+                    <input type="password" id="password" placeholder="••••••••" required value="admin123">
+                </div>
+                <button type="submit" class="btn-primary full-width" style="padding: 1rem;">AUTHENTICATE & LOG IN</button>
+                <p id="login-error" class="error-text"></p>
+                <p style="text-align: center; font-size: 0.7rem; color: var(--muted); margin-top: 2rem; font-weight: 600;">ENCRYPTED SESSION SECURE</p>
+            </form>
+        </div>
+    </div>
+    <!-- Main App Layout -->
+    <div id="app-container" class="layout hidden">
+        <aside class="sidebar">
+            <div class="sidebar-brand">
+                <h2 class="brand-title-small italic">GRAND<br>HORIZON</h2>
+                <p class="brand-sub-tiny">SYSTEM v2.0</p>
+            </div>
+            
+            <nav class="sidebar-nav">
+                <button class="nav-btn active" data-tab="dashboard">
+                    <i data-lucide="layout-dashboard"></i>
+                    <span>DASHBOARD</span>
+                </button>
+                <button class="nav-btn" data-tab="rooms">
+                    <i data-lucide="bed-double"></i>
+                    <span>ROOM MGMT</span>
+                </button>
+                <button class="nav-btn" data-tab="bookings">
+                    <i data-lucide="calendar-check"></i>
+                    <span>BOOKINGS</span>
+                </button>
+                <button class="nav-btn" data-tab="customers">
+                    <i data-lucide="users"></i>
+                    <span>CUSTOMERS</span>
+                </button>
+            </nav>
+
+            <div class="sidebar-footer">
+                <div class="admin-badge">
+                    <span class="label">ACTIVE ADMIN</span>
+                    <span class="value">S. MORRISON</span>
+                </div>
+                <button id="logout-btn" class="logout-link">TERMINAL LOGOUT</button>
+            </div>
+        </aside>
+
+        <main class="content">
+            <header class="content-header">
+                <div class="title-container">
+                    <h1 id="page-title">OVERVIEW</h1>
+                    <p id="page-subtitle">SYSTEM STATUS: OPTIMAL</p>
+                </div>
+                <div class="header-actions">
+                    <button class="btn-primary" id="global-new-booking">NEW BOOKING</button>
+                </div>
+            </header>
+
+            <section id="tab-content" class="tab-view">
+                <!-- Content will be injected here via app.js -->
+            </section>
+            
+            <footer class="app-footer">
+                <p>SYSTEM BUILD 1024-X-768 © 2023</p>
+                <div class="status-indicators">
+                    <span class="indicator">DATABASE CONNECTED</span>
+                    <span class="indicator">SECURITY SHIELD ACTIVE</span>
+                </div>
+            </footer>
+        </main>
+    </div>
+
+    <!-- Modals -->
+    <div id="modal-container" class="modal-overlay hidden">
+        <div id="modal-content" class="modal-card">
+            <!-- Modal forms injected here -->
+        </div>
+    </div>
+
+    <script src="/js/app.js"></script>
+</body>
+</html>
